@@ -2,7 +2,7 @@
 const categorySelect = document.getElementById('category');
 const cropsInput = document.getElementById('cropsInput');
 const animalsInput = document.getElementById('animalsInput');
-const calculateButton = document.getElementById('calculateButton');
+const calculateButton = document.querySelector('.learn-more');
 const resultLabel = document.getElementById('resultLabel');
 
 // Show the appropriate input section based on the selected category
