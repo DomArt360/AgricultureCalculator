@@ -159,3 +159,30 @@ button:hover .button-text {
   margin-top: 20px;
   font-size: 1.2em;
 }
+
+@media (max-width: 600px) {
+  .container {
+    width: 80%;  
+    padding: 15px;
+    margin-block: 10px;
+    border-radius: 20px;  
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+  }
+
+  select, input {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  button.learn-more {
+    width: 10rem;
+  }
+  button.learn-more .button-text {
+    line-height: 1.6;
+    font-size: 14px;
+  }
+}
