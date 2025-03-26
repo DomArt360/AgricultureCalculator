@@ -163,13 +163,13 @@ button:hover .button-text {
 @media (max-width: 700px) {
   .container {
     width: 80%;  
-    padding: 15px;
-    margin-block: 10px;
+    padding: 20px;
+    margin: 10px auto;
     border-radius: 25px;  
   }
 
   h1 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-bottom: 40px;
   }
 
@@ -183,6 +183,6 @@ button:hover .button-text {
   }
   button.learn-more .button-text {
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
