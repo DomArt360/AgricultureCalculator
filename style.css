@@ -32,6 +32,12 @@ body {
     color: white; 
     max-width: 400px;
 }
+.logo {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the logo */
+}
 
 h1 {
   font-size: 1.7em;
