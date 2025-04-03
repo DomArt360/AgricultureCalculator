@@ -25,7 +25,7 @@ calculateButton.addEventListener('click', () => {
 
     // Check for decimals in any field that must be whole numbers
     if ( animalCountStr.includes('.')) {
-        resultLabel.innerHTML = 'Decimal numbers are not allowed. Please enter whole numbers only.';
+        resultLabel.innerHTML = 'Dešimtainiai skaičiai neleidžiami. Prašome įvesti tik sveikus skaičius.';
         return; // Stop processing further
     }
     let result = 0;
@@ -43,15 +43,17 @@ calculateButton.addEventListener('click', () => {
                 const seedCost = result2 * 120;
                 const cropValue = result * 180;
                 const fertilizerCost = landSize * 300;
-                const profit = cropValue - fertilizerCost - seedCost;
+                const fuel = landSize * 150;
+                const profit = cropValue - fertilizerCost - seedCost - fuel;
 
                 resultLabel.innerHTML = `
-                    Seed needed: ${result2.toFixed(2)} tons<br>
-                    Estimated seed cost: €${seedCost.toFixed(2)}<br>
-                    Estimated crop output: ${result.toFixed(2)} tons<br>
-                    Estimated crop value: €${cropValue.toFixed(2)}<br>
-                    Fertilizer cost: €${fertilizerCost.toFixed(2)}<br>
-                    Estimated profit by last year: €${profit.toFixed(2)}
+                    Reikalingas sėklų kiekis: ${result2.toFixed(2)} t.<br>
+                    Numatoma sėklų kaina: €${seedCost.toFixed(2)}<br>
+                    Numatomas derliaus kiekis: ${result.toFixed(2)} t.<br>
+                    Numatoma derliaus vertė: €${cropValue.toFixed(2)}<br>
+                    Trąšų kaina: €${fertilizerCost.toFixed(2)}<br>
+                    Kuro ir darbo kaina: €${fuel.toFixed(2)}<br>
+                    Numatomas pelnas pagal praėjusius metus: €${profit.toFixed(2)}
                 `;
             } else if (cropType === 'Wheat') {
                 result = landSize * 10;
@@ -59,15 +61,17 @@ calculateButton.addEventListener('click', () => {
                 const seedCost = result2 * 140;
                 const cropValue = result * 220;
                 const fertilizerCost = landSize * 280;
-                const profit = cropValue - fertilizerCost - seedCost;
+                const fuel = landSize * 150;
+                const profit = cropValue - fertilizerCost - seedCost - fuel;
 
                 resultLabel.innerHTML = `
-                    Seed needed: ${result2.toFixed(2)} tons<br>
-                    Estimated seed cost: €${seedCost.toFixed(2)}<br>
-                    Estimated crop output: ${result.toFixed(2)} tons<br>
-                    Estimated crop value: €${cropValue.toFixed(2)}<br>
-                    Fertilizer cost: €${fertilizerCost.toFixed(2)}<br>
-                    Estimated profit by last year: €${profit.toFixed(2)}
+                    Reikalingas sėklų kiekis: ${result2.toFixed(2)} t.<br>
+                    Numatoma sėklų kaina: €${seedCost.toFixed(2)}<br>
+                    Numatomas derliaus kiekis: ${result.toFixed(2)} t.<br>
+                    Numatoma derliaus vertė: €${cropValue.toFixed(2)}<br>
+                    Trąšų kaina: €${fertilizerCost.toFixed(2)}<br>
+                    Kuro ir darbo kaina: €${fuel.toFixed(2)}<br>
+                    Numatomas pelnas pagal praėjusius metus: €${profit.toFixed(2)}
                 `;
             } else if (cropType === 'Canola') {
                 result = landSize * 3.5;
@@ -75,15 +79,17 @@ calculateButton.addEventListener('click', () => {
                 const seedCost = result2 * 200;
                 const cropValue = result * 500;
                 const fertilizerCost = landSize * 320;
-                const profit = cropValue - fertilizerCost - seedCost;
+                const fuel = landSize * 150;
+                const profit = cropValue - fertilizerCost - seedCost - fuel;
 
                 resultLabel.innerHTML = `
-                    Seed needed: ${result2.toFixed(2)} tons<br>
-                    Estimated seed cost: €${seedCost.toFixed(2)}<br>
-                    Estimated crop output: ${result.toFixed(2)} tons<br>
-                    Estimated crop value: €${cropValue.toFixed(2)}<br>
-                    Fertilizer cost: €${fertilizerCost.toFixed(2)}<br>
-                    Estimated profit by last year: €${profit.toFixed(2)}
+                    Reikalingas sėklų kiekis: ${result2.toFixed(2)} t.<br>
+                    Numatoma sėklų kaina: €${seedCost.toFixed(2)}<br>
+                    Numatomas derliaus kiekis: ${result.toFixed(2)} t.<br>
+                    Numatoma derliaus vertė: €${cropValue.toFixed(2)}<br>
+                    Trąšų kaina: €${fertilizerCost.toFixed(2)}<br>
+                    Kuro ir darbo kaina: €${fuel.toFixed(2)}<br>
+                    Numatomas pelnas pagal praėjusius metus: €${profit.toFixed(2)}
                 `;
             }
         } else if (category === 'Animals') {
@@ -94,23 +100,23 @@ calculateButton.addEventListener('click', () => {
                 result = animalCount * 4.1;
                 result2 = animalCount * 0.2;
                 resultLabel.innerHTML = `
-                    Estimated tons of hay needed per year: ${result.toFixed(2)} Tons<br>
-                    Estimated tons of flour needed per year: ${result2.toFixed(2)} Tons
+                    Numatomas reikiamo šieno kiekis per metus: ${result.toFixed(2)} t.<br>
+                    Numatomas reikiamas miltų kiekis per metus: ${result2.toFixed(2)} t.
                 `;
             } else if (animalType === 'Sheep') {
                 result = animalCount * 0.9;
                 result2 = animalCount * 4;
                 const blocks = animalCount * 2;
                 resultLabel.innerHTML = `
-                    Estimated tons of hay needed per year: ${result.toFixed(2)} Tons<br>
-                    Estimated kilograms of salt needed per year: ${result2.toFixed(2)} Kg (Around ${blocks.toFixed(2)} blocks)
+                    Numatomas reikiamo šieno kiekis per metus: ${result.toFixed(2)} t.<br>
+                    Numatomas reikiamos druskos kiekis per metus: ${result2.toFixed(2)} Kg (Apie ${blocks.toFixed(2)} blokų/-us)
                 `;
             } else if (animalType === 'Pig') {
                 result = animalCount * 0.6;
-                resultLabel.innerHTML = `Estimated tons of food needed per year: ${result.toFixed(2)} Tons`;
+                resultLabel.innerHTML = `Numatomas reikiamo pašaro kiekis per metus: ${result.toFixed(2)} t.`;
             }
         }
     } catch (e) {
-        resultLabel.innerHTML = 'Please enter valid numeric values.';
+        resultLabel.innerHTML = 'Prašome įvesti teisingas skaitines reikšmes.';
     }
 });
